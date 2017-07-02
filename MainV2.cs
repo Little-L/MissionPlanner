@@ -3673,5 +3673,16 @@ namespace MissionPlanner
         {
             new ConnectionOptions().Show(this);
         }
+
+
+        private void FlytowertoolStripButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To be continue... by zlz");
+        }
+
+        private void toolStripConnectionControl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
