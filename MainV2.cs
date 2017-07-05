@@ -201,7 +201,8 @@ namespace MissionPlanner
 
         Controls.MainSwitcher MyView;
 
-        private static DisplayView _displayConfiguration = new DisplayView().Basic();
+        // 改为新的显示配置选项 (LConfig 方法)
+        private static DisplayView _displayConfiguration = new DisplayView().LConfig();
 
         public static event EventHandler LayoutChanged;
 
@@ -411,9 +412,11 @@ namespace MissionPlanner
 
         public void updateLayout(object sender, EventArgs e)
         {
-            MenuSimulation.Visible = DisplayConfiguration.displaySimulation;
-            MenuTerminal.Visible = DisplayConfiguration.displayTerminal;
-            MenuHelp.Visible = DisplayConfiguration.displayHelp;
+            // 修改部分功能条的显示
+            MenuSimulation.Visible = true;// DisplayConfiguration.displaySimulation;
+            MenuTerminal.Visible = false; // DisplayConfiguration.displayTerminal;
+            MenuHelp.Visible = true; // DisplayConfiguration.displayHelp;
+            MenuDonate.Visible = false;
             MissionPlanner.Controls.BackstageView.BackstageView.Advanced = DisplayConfiguration.isAdvancedMode;
 
             if (MainV2.instance.FlightData != null)

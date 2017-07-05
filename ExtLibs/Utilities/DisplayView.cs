@@ -136,5 +136,28 @@ namespace MissionPlanner.Utilities
                 isAdvancedMode = true
             };
         }
+        public static DisplayView LConfig(this DisplayView v)
+        {
+            return new DisplayView()
+            {
+                displayName = DisplayNames.Advanced,
+                displaySimulation = true,
+                displayTerminal = false,
+                displayDonate = false,
+                displayHelp = true,
+                displayAnenometer = true,
+                displayAdvActionsTab = true,
+                displaySimpleActionsTab = false,
+                displayStatusTab = true,
+                displayServoTab = true,
+                displayScriptsTab = true,
+                displayAdvancedParams = true,
+                displayFullParamList = true,
+                displayFullParamTree = true,
+                displayBaudCMB = true,
+                displaySerialPortCMB = true,
+                isAdvancedMode = true
+            };
+        }
     }
 }
