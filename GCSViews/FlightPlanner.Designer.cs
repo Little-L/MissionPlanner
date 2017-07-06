@@ -176,6 +176,7 @@ namespace MissionPlanner.GCSViews
             this.areaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.textToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCircleSurveyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.surveyGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mapToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMeasure = new System.Windows.Forms.ToolStripMenuItem();
             this.rotateMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -205,7 +206,7 @@ namespace MissionPlanner.GCSViews
             this.panelBASE = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.surveyGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myButton1 = new MissionPlanner.Controls.MyButton();
             ((System.ComponentModel.ISupportInitialize)(this.Commands)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -701,6 +702,7 @@ namespace MissionPlanner.GCSViews
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Controls.Add(this.panel1);
+            this.flowLayoutPanel1.Controls.Add(this.myButton1);
             resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
@@ -1161,6 +1163,12 @@ namespace MissionPlanner.GCSViews
             resources.ApplyResources(this.createCircleSurveyToolStripMenuItem, "createCircleSurveyToolStripMenuItem");
             this.createCircleSurveyToolStripMenuItem.Click += new System.EventHandler(this.createCircleSurveyToolStripMenuItem_Click);
             // 
+            // surveyGridToolStripMenuItem
+            // 
+            this.surveyGridToolStripMenuItem.Name = "surveyGridToolStripMenuItem";
+            resources.ApplyResources(this.surveyGridToolStripMenuItem, "surveyGridToolStripMenuItem");
+            this.surveyGridToolStripMenuItem.Click += new System.EventHandler(this.surveyGridToolStripMenuItem_Click);
+            // 
             // mapToolToolStripMenuItem
             // 
             this.mapToolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1355,11 +1363,13 @@ namespace MissionPlanner.GCSViews
             this.timer1.Interval = 1200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // surveyGridToolStripMenuItem
+            // myButton1
             // 
-            this.surveyGridToolStripMenuItem.Name = "surveyGridToolStripMenuItem";
-            resources.ApplyResources(this.surveyGridToolStripMenuItem, "surveyGridToolStripMenuItem");
-            this.surveyGridToolStripMenuItem.Click += new System.EventHandler(this.surveyGridToolStripMenuItem_Click);
+            resources.ApplyResources(this.myButton1, "myButton1");
+            this.myButton1.Name = "myButton1";
+            this.myButton1.TextColor = System.Drawing.Color.Black;
+            this.myButton1.UseVisualStyleBackColor = true;
+            this.myButton1.Click += new System.EventHandler(this.myButton1_Click);
             // 
             // FlightPlanner
             // 
@@ -1541,5 +1551,6 @@ namespace MissionPlanner.GCSViews
         private System.Windows.Forms.ToolStripMenuItem createCircleSurveyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem currentPositionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem surveyGridToolStripMenuItem;
+        private MyButton myButton1;
     }
 }

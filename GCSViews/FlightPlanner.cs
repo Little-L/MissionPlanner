@@ -7030,5 +7030,53 @@ Column 1: Field type (RALLY is the only one at the moment -- may have RALLY_LAND
             grid.Host = new PluginHost();
             grid.but_Click(sender, e);
         }
-    }
+
+        private void myButton1_Click(object sender, EventArgs e)
+        {
+                using (OpenFileDialog fd = new OpenFileDialog())
+                {
+                    // 相对路径（..及 .）
+                    fd.InitialDirectory = Application.StartupPath + @"\FlyTowerPlan\";
+                    fd.Filter = "All Supported Types|*.txt;*.waypoints;*.shp;*.plan";
+                    DialogResult result = fd.ShowDialog();
+                    string file = fd.FileName;
+
+                    if (File.Exists(file))
+                    {
+                        if (file.ToLower().EndsWith(".shp"))
+                        {
+                            LoadSHPFile(file);
+                        }
+                        else
+                        {
+                            string line = "";
+                            using (var fs = File.OpenText(file))
+                            {
+                                line = fs.ReadLine();
+                            }
+
+                            if (line.StartsWith("{"))
+                            {
+                                var format = MissionFile.ReadFile(file);
+
+                                var cmds = MissionFile.ConvertToLocationwps(format);
+
+                                processToScreen(cmds);
+
+                                writeKML();
+
+                                MainMap.ZoomAndCenterMarkers("objects");
+                            }
+                            else
+                            {
+                                wpfilename = file;
+                                readQGC110wpfile(file);
+                            }
+                        }
+
+                        lbl_wpfile.Text = "Loaded " + Path.GetFileName(file);
+                    }
+                }
+            }
+        }
 }

@@ -123,7 +123,7 @@ namespace MissionPlanner
             string strVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             /*Splash.Text = name + " " + Application.ProductVersion + " build " + strVersion;*/
             // MP 主窗口顯示標題修改
-            Splash.Text = name + " Dev - By ZLZ";
+            Splash.Text = name + " Dev - By @L";
             Splash.Show();
 
             Application.DoEvents();
